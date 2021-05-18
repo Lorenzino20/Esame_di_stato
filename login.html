@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="header">
+            <div class="logo">
+                <a href="index.html"><img src="Logo/logo_small.png"></a>
+            </div>
+            <div class="menu">
+                <ul class="menu-items">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="current"><a href="login.html">Login</a></li>
+                    <li><a href="registrazione.php">Registrazione</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="main">
+            <div id="introduzione">
+                <h2>Effetta l'accesso se sei già registrato nella piattaforma.
+                     Altrimenti registrati cliccando <a href="registrazione.php">QUI</a></h2>
+            </div>
+            <div class="login">
+                <form action="login.php" method="POST">
+                    <div class="title">
+                        <h1>Login</h1>
+                    </div>
+                    <div class="item">
+                        <label for="email">Email</label>
+                        <input type="email" name="email">
+                    </div>
+                    <div class="item">
+                        <label for="psw">Password</label>
+                        <input type="password" name="psw">
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="Accedi" class="submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="footer">
+            <span>Sito realizzato da Lorenzo D'Amico</span>
+            <span>Copyright©2020 LDA SpA</span>
+            <span>Tutti i diritti riservati</span>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+        </div>
+    </body>
+</html>

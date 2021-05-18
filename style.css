@@ -1,0 +1,327 @@
+* {
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    width: auto;
+    height: 93%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: whitesmoke;
+}
+
+.header {
+    box-shadow: 8px 8px grey;
+    background-image: url("Immagini/b.jpg");
+    background-position-y: center;
+    height: 90px;
+    width: auto;
+    display: flex;
+    padding-bottom: 5px;
+    justify-content: space-between;
+    border-bottom-style: solid;
+    border-color: #4d0606;
+    border-width: 2px;
+}
+
+.logo img {
+    width: 250px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.menu ul{
+    margin: 10px 150px;
+    list-style: none;
+    display: flex;
+}
+
+.menu li{
+    border-bottom-style: solid;
+    border-color:  whitesmoke;
+    border-width: 2px;
+    margin: 10px 0px 10px 0px;
+    padding: 15px;
+    align-items: center;
+}
+
+.menu a {
+    text-decoration: none;
+    font-size: medium;
+    color: black;
+}
+
+.menu .current {
+    border-color: gray;
+}
+
+.page {
+    display: flex;
+    width: auto;
+    height: 90%;
+    background-image: url("Immagini/back.jpg");
+    background-position-y: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.page h1 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding-top: 20%;
+    padding-left: 20%;
+    vertical-align: baseline;
+}
+
+#introduzione {
+    text-align: center;
+}
+
+.page #descrizione {
+    align-items: flex-end;
+}
+
+
+.content {
+    padding-top: 10%;
+    padding-left: 45%;
+    width: 50%;
+    height: 50%;
+    font-size: 200%;
+    text-align-last: end;
+}
+
+/*Login*/
+
+.main {
+    width: auto;
+    height: 100%;
+    padding-top: 40px;
+}
+
+.login {
+    position: absolute;
+    min-height: 250px;
+    height: 150px;
+    width: 350px;
+    background-color:white;
+    border-radius: 35px;
+    padding: 5px;
+    left: 50%;
+    top: 50%;
+    margin-left: -175px;
+    margin-top: -75px;
+}
+
+.registrazione {
+    position: absolute;
+    min-height: 250px;
+    height: 550px;
+    width: 350px;
+    background-color:white;
+    border-radius: 35px;
+    padding: 5px;
+    left: 50%;
+    top: 30%;
+    margin-left: -175px;
+    margin-top: -75px;
+}
+
+.title {
+    text-align: center;
+}
+
+.item {
+    padding: 5px;
+    text-align: start;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.button {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.submit {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 3px 8px 3px 8px;
+    background: #0786C5;
+    border: 1px solid #0786C5;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+}
+
+.refresh {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 3px 8px 3px 8px;
+    background: #0786C5;
+    border: 1px solid #0786C5;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+}
+
+.captcha p {
+    text-align: center;
+}
+.captcha {
+    padding: 5px;
+    text-align: end;
+}
+
+.comment {
+    position: absolute;
+    top: 95%;
+}
+
+.page1 {
+    padding-top: 30px;
+}
+
+.footer {
+    padding: 20px 0px 20px 0px;
+    background-color: black;
+    color: white;
+}
+
+.footer span {
+    padding: 0px 20px 0px 20px;
+}
+
+.footer i {
+    padding: 0px 40px 0px 40px;
+}
+
+.card {
+    text-align: center;
+    background-color: gray;
+    width: 550px;
+    height: 300px;
+    border-radius: 20px;
+    margin-left: 30%;
+}
+.card h1 {
+    text-align: center;
+}
+
+.skipass {
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 30px 0px 0px 30px;
+    text-align: center;
+}
+
+.piani {
+    margin-left: 100px;
+}
+
+.piani input {
+    margin-bottom: 20px;
+}
+
+.qrcode {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.tabella_prenotazioni{
+    display: flex;
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+.prenotazioni {
+    border-style: solid;
+    border-color: black;
+}
+
+.prenotazioni td {
+    padding: 10px 10px 10px 10px;
+    border-color: black;
+    border-style: solid;
+}
+
+.prenotazione {
+    height: fit-content;
+    min-height: 90%;
+}
+
+.area_cliente {
+    width: auto;
+    height: 100%;
+}
+
+.tabella_utenti {
+    display: flex;
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+.utenti {
+    border-style: solid;
+    border-color: black;
+}
+
+.utenti td {
+    padding: 10px 10px 10px 10px;
+    border-color: black;
+    border-style: solid;
+}
+
+.modifica_dati {
+    display: inline;
+}
+
+.modifica_dati input {
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+.error {
+    text-align: center;
+}
+
+.separatore {
+    height: 7px;
+    color: grey;
+    background-color: grey;
+    border: none;
+}
+
+.matched {
+    background-color: green;
+}
+
+.not-matched {
+background-color: red;
+}
+
+.tabella_calendario {
+    border: solid black
+}
+.tabella_calendario td {
+    padding: 8px;
+    border: solid black
+}
+
+.tabella_calendario a {
+    text-decoration: none;
+    color: black
+}
+
+
