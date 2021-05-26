@@ -29,14 +29,8 @@
     } else {
         $codice_fiscale = $_SESSION['codice_fiscale'];
         $id_utente = $_SESSION['id_utente'];
-        if(isset($_POST['piano1'])) {
-            $p = $_POST['piano1'];
-        }
-        if(isset($_POST['piano2'])) {
-            $p = $_POST['piano2'];
-        }
-        if(isset($_POST['piano3'])) {
-            $p = $_POST['piano3'];
+        if(isset($_POST['piano'])) {
+            $p = $_POST['piano'];
         }
     
         $database = mysql_connect("localhost", "root", "")
@@ -56,7 +50,7 @@
             $oggi = date ("Y/m/d");
             $due_mesi = strtotime('+60 day', strtotime($oggi));
             $due_mesi = date('Y/m/d', $due_mesi);
-            $testo = "INSERT INTO skipass(risalite_rimanenti, data_attivazione, data_scadenza, id_utente) VALUES ('$p', '$oggi', '$due_mesi', '$id_utente')";
+            $testo = "INSERT INTO skipass(risalite_rimanenti, data_attivazione, data_scadenza, id_utente, risalite_piano) VALUES ('$p', '$oggi', '$due_mesi', '$id_utente', '$p')";
             $query = mysql_query($testo);
 
             if($query) {

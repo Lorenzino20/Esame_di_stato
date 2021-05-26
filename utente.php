@@ -21,7 +21,6 @@
         </div>
     </div>
     <div class="area_cliente">
-            <h1>Ciao, sei nella sezione utente.<h1>
 <?php
     session_start();
     if(!isset($_SESSION['pass'])) {
@@ -34,13 +33,19 @@
     
         mysql_select_db("esame2")
         or die ("Errore connessione con database");
-        $testo = "SELECT codice_fiscale 
-        FROM utente
-        WHERE utente.email = '$email'";
+        $testo = "SELECT U.codice_fiscale AS codice_fiscale, U.nome AS nome, U.cognome AS cognome  
+        FROM utente U
+        WHERE U.email = '$email'";
         $query = mysql_query($testo);
         $righe = mysql_fetch_array($query);
         $codice_fiscale = $righe['codice_fiscale'];
+        $nome = $righe['nome'];
+        $cognome = $righe['cognome'];
+        echo "<div class='utente'>
+            <h3>Benvenuto $nome $cognome</h3>
+        </div>";
         $_SESSION['codice_fiscale'] = $codice_fiscale;
+
     
         $testo = "SELECT *
         FROM skipass
@@ -51,10 +56,13 @@
         $righe = mysql_num_rows($query);
     
         if($righe <> 0) {
-            echo "<h2>Se vuoi prenotare una risalita clicca <a href='prenotazione.php'>qui</a>!</h2>
-            <h2>Se vuoi visualizzare le tue prenotazioni clicca <a href='visualizza.php'>qui</a>!</h2>";
+            echo "
+            <div id='home_utente'>
+                <h2 id='item'>Se vuoi prenotare una risalita clicca qui!</h2><a href='prenotazione.php'><img src='Immagini/prenota.png'></img></a>
+                <h2 id='item'>Se vuoi visualizzare le tue prenotazioni clicca qui!</h2><a href='visualizza.php'><img src='Immagini/prenotazioni.png'></img></a>
+            </div>";
         } else {
-            echo "<h2>Non hai ancora uno skipass associato. Acquistalo <a href='acquistoSkipass.php'>qui</a></h2>";
+            echo "<div class='comment'><h2>Non hai ancora uno skipass associato. Acquistalo <a href='acquistoSkipass.php'>qui</a></h2></div>";
         }
         mysql_close();
     }

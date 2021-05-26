@@ -20,7 +20,7 @@
             </ul>
         </div>
     </div>
-    <div class="prenotazione">
+    <div class="area_cliente">
 <?php
     session_start();
     if(!isset($_SESSION['pass'])) {
@@ -44,17 +44,17 @@
             $query = mysql_query($testo);
             $righe = mysql_fetch_array($query);
             $risalite_rimanenti = $righe['risalite_rimanenti'];
-            if($risalite_rimanenti <> 0) {
+            if($risalite_rimanenti > 0) {
                 $testo = "SELECT I.nome AS nome, I.descrizione AS descrizione, I.posti_totali AS posti_totali
                 FROM impianto_risalita I";
                 $query = mysql_query($testo);
                 echo"<div class='tabella_prenotazioni'>
                 <table class='prenotazioni'>
-                <tr><td>Tabella impianti di risalita</td></tr>
+                <th>Tabella impianti di risalita<th>
                 <tr>
                 <td>Nome</td>
                 <td>Descrizione</td>
-                <td>Posti totali (per risalita)</td>
+                <td>Posti totali</td>
                 </tr>";
                 while($vettore = mysql_fetch_array($query)) {
                     echo"<tr>
@@ -65,13 +65,12 @@
                 }
                 echo "</table></div>";
             } else {
-                echo "<h2>Impossibile effettuare prenotazioni con uno skipass scaduto o senza risalite. Per acquistare un altro skipass clicca <a href='acquistoSkipass.php'>qui</a></h2>";
+                echo "<div class='comment'><h2>Impossibile effettuare prenotazioni con uno skipass scaduto o senza risalite. Per acquistare un altro skipass clicca <a href='acquistoSkipass.php'>qui</a></h2></div>";
             }
             
         } else {
-            echo "<h2>Impossibile effettuare prenotazioni senza aver acquistato uno skipass. Per acquistarlo clicca <a href='acquistoSkipass.php'>qui</a></h2>";
+            echo "<div class='comment'><h2>Impossibile effettuare prenotazioni senza aver acquistato uno skipass. Per acquistarlo clicca <a href='acquistoSkipass.php'>qui</a></h2></div>";
         }
-        
         mysql_close();
     } 
 ?>

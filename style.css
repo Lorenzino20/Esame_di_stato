@@ -1,30 +1,53 @@
 * {
     box-sizing: border-box;
     word-wrap: break-word;
+    margin: 0px;
+    padding: 0px;
 }
 
 html {
-    height: 100%;
+    width: 100%;
+    height: auto;
+    min-height: 900px;
 }
 
 body {
     width: auto;
-    height: 93%;
+    height: auto;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: whitesmoke;
+    background-color: white;
 }
 
-.header {
-    box-shadow: 8px 8px grey;
-    background-image: url("Immagini/b.jpg");
+.sf1 {
+    height: 100%;
+    background-image: url("Immagini/back.jpg");
     background-position-y: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* MENU */
+
+.header_index {
+    position: fixed;
+    width: 100%;
     height: 90px;
-    width: auto;
+    background-color: white;
     display: flex;
     padding-bottom: 5px;
     justify-content: space-between;
     border-bottom-style: solid;
-    border-color: #4d0606;
+    border-width: 2px;
+}
+
+.header {
+    width: 100%;
+    height: 90px;
+    background-color: white;
+    display: flex;
+    padding-bottom: 5px;
+    justify-content: space-between;
+    border-bottom-style: solid;
     border-width: 2px;
 }
 
@@ -35,7 +58,7 @@ body {
 }
 
 .menu ul{
-    margin: 10px 150px;
+    margin-right: 20px;
     list-style: none;
     display: flex;
 }
@@ -59,21 +82,37 @@ body {
     border-color: gray;
 }
 
+/* FOOTER */
+
+.footer {
+    padding: 20px 0px 20px 0px;
+    background-color: black;
+    color: white;
+}
+
+.footer span {
+    padding: 0px 20px 0px 20px;
+}
+
+.footer i {
+    padding: 0px 40px 0px 40px;
+}
+
+/* PAGINA CENTRALE */
+
 .page {
+    /* margin-top: 20px; */
     display: flex;
     width: auto;
-    height: 90%;
-    background-image: url("Immagini/back.jpg");
-    background-position-y: center;
-    background-attachment: fixed;
-    background-size: cover;
+    height: 800px;
+    justify-content: center;
+    align-items: center;
 }
 
 .page h1 {
     text-align: center;
     color: rgb(255, 255, 255);
-    padding-top: 20%;
-    padding-left: 20%;
+    
     vertical-align: baseline;
 }
 
@@ -95,56 +134,112 @@ body {
     text-align-last: end;
 }
 
-/*Login*/
+.grid {
+    text-align: center;
+    display: grid;
+    grid-column: 3;
+    grid-row: 2;
+    grid-column-gap: 60px;
+    grid-row-gap: 30px;
+}
+
+.grid img {
+    width: 400px;
+    height: 400px;
+}
+
+.riga img{
+    padding: 50px 50px 50px 50px;
+}
+
+/* LOGIN */
 
 .main {
     width: auto;
-    height: 100%;
-    padding-top: 40px;
+    height: auto;
+    min-height: 650px;
+    font-family: "Roboto";
+    font-size: 14px;
+}
+
+.logo_log {
+    margin-top: 30px;
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.logo_log img {
+    width: 250px;
+    height: 80px;
 }
 
 .login {
-    position: absolute;
-    min-height: 250px;
-    height: 150px;
+    height: 300px;
     width: 350px;
     background-color:white;
-    border-radius: 35px;
-    padding: 5px;
-    left: 50%;
-    top: 50%;
-    margin-left: -175px;
-    margin-top: -75px;
+    border-radius: 6px;
+    border: 1px solid grey;
+    font-size: 20px;
+    margin: 20px auto;
+    line-height: 30px;
+    background-color: #f6f8fa;
 }
+
+.login input {
+    border-radius: 6px;
+    border: 1px solid grey;
+    width: 100%;
+    height: 30px;
+}
+
+#button {   
+    padding: 20px;
+    color: #2ea44f;
+}
+
+#title {
+    margin: 40px 0px 10px 0px;
+    text-align: center;
+}
+
+.login #item {
+    padding: 20px;
+    text-align: start;
+}
+
+/* REGISTRAZIONE */
 
 .registrazione {
-    position: absolute;
-    min-height: 250px;
-    height: 550px;
-    width: 350px;
-    background-color:white;
-    border-radius: 35px;
-    padding: 5px;
-    left: 50%;
-    top: 30%;
-    margin-left: -175px;
-    margin-top: -75px;
+    width: 550px;
+    height: 850px;
+    font-size: 20px;
+    margin: 30px 300px;
+    line-height: 30px;
 }
 
-.title {
-    text-align: center;
+
+.registrazione input {
+    border-radius: 6px;
+    border: 1px solid grey;
+    width: 100%;
+    height: 30px;
 }
 
-.item {
-    padding: 5px;
+.registrazione #item {
+    padding: 10px 20px 10px 20px;
     text-align: start;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.button {
-    padding-top: 15px;
-    padding-bottom: 10px;
-    text-align: center;
+.captcha {
+    display: flex;
+    align-items: center;
+}
+
+.captcha #item {
+    display: flex;
 }
 
 .submit {
@@ -154,57 +249,78 @@ body {
     color: #FFFFFF;
     cursor: pointer;
     padding: 3px 8px 3px 8px;
-    background: #0786C5;
-    border: 1px solid #0786C5;
-    -moz-border-radius: 15px;
-    -webkit-border-radius: 15px;
+    background: #2ea44f;;
+    border: 1px solid grey;
     border-radius: 15px;
 }
 
-.refresh {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #FFFFFF;
-    cursor: pointer;
-    padding: 3px 8px 3px 8px;
-    background: #0786C5;
-    border: 1px solid #0786C5;
-    -moz-border-radius: 15px;
-    -webkit-border-radius: 15px;
-    border-radius: 15px;
-}
-
-.captcha p {
+#captcha p {
     text-align: center;
 }
-.captcha {
+#captcha {
     padding: 5px;
     text-align: end;
 }
 
+/* AREA CLIENTE */
+
+.area_cliente {
+    width: auto;
+    height: auto;
+    min-height: 750px;
+    background-image: url("Immagini/a.jpg");
+    background-size: cover;
+}
+
+.utente {
+    height: auto;
+    text-align: right;
+    padding: 20px 50px 20px 50px;
+    font-size: 20px;
+    background-color: whitesmoke;
+    margin-bottom: 40px;
+}
+
+#home_utente {
+    text-align: center;
+}
+
+#home_utente img {
+    width: 300px;
+    height: 200px;
+    margin-bottom: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+#home_utente #item {
+    display: block;
+}
+
+.monitoraggio {
+    padding-top: 20px;
+}
+
+#monitoraggio_title {
+    text-align: center; 
+}
+
 .comment {
-    position: absolute;
-    top: 95%;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align:center;
+    color: black;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.comment a {
+    color: red;
+    text-decoration: none;
 }
 
 .page1 {
     padding-top: 30px;
-}
-
-.footer {
-    padding: 20px 0px 20px 0px;
-    background-color: black;
-    color: white;
-}
-
-.footer span {
-    padding: 0px 20px 0px 20px;
-}
-
-.footer i {
-    padding: 0px 40px 0px 40px;
 }
 
 .card {
@@ -213,41 +329,66 @@ body {
     width: 550px;
     height: 300px;
     border-radius: 20px;
-    margin-left: 30%;
+    margin-left: 100px;
+    margin-top: 40px;
+    font-size: 15px;
 }
 .card h1 {
     text-align: center;
+    padding: 30px;
+}
+
+.card h2 {
+    padding: 5px;
 }
 
 .skipass {
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin: 30px 0px 0px 30px;
-    text-align: center;
+    display: flex;
 }
 
 .piani {
     margin-left: 100px;
+    margin-top: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 20px;
 }
 
-.piani input {
+.piani #submit{
+    margin-top: 20px;
     margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid grey;
+    width: 100%;
+    height: 30px;
+}
+
+.piani #submit_admin{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid grey;
+    width: 200px;
+    height: 30px;
 }
 
 .qrcode {
     margin-top: 50px;
     text-align: center;
 }
-
+ 
 .tabella_prenotazioni{
+    /* background-color: rgba(255, 255, 255, 0.9); */
     display: flex;
-    margin-top: 20px;
-    font-size: 25px;
-}
+    padding-top: 20px;
+} 
 
 .prenotazioni {
     border-style: solid;
     border-color: black;
+    font-size: 25px;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .prenotazioni td {
@@ -256,15 +397,45 @@ body {
     border-style: solid;
 }
 
-.prenotazione {
-    height: fit-content;
-    min-height: 90%;
+.prenotazioni a {
+    text-decoration: none;
+    color: black
 }
 
-.area_cliente {
-    width: auto;
-    height: 100%;
+.prenotazione{
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-left: auto;
+    margin-right: auto;
+    width: 550px;
+    height: auto;
+    font-size: 20px;
 }
+
+
+.prenotazione input {
+    border-radius: 6px;
+    border: 1px solid grey;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+.prenotazione h2{
+    margin-bottom: 30px;
+}
+
+.legenda {
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    border-style: solid;
+    border-color: black;
+    margin-top: 20px;
+}
+
 
 .tabella_utenti {
     display: flex;
@@ -284,12 +455,39 @@ body {
 }
 
 .modifica_dati {
-    display: inline;
+    padding-top: 40px;
 }
 
-.modifica_dati input {
-    width: 250px;
+.modifica_dati_form{
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-left: auto;
+    margin-right: auto;
+    width: 550px;
+    height: auto;
+    font-size: 20px;
+}
+
+.modifica_dati_form input {
+    border-radius: 6px;
+    border: 1px solid grey;
+    width: 100%;
+    height: 30px;
     margin-bottom: 20px;
+}
+
+.info_utente {
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-left: auto;
+    margin-right: auto;
+    width: 550px;
+    height: auto;
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 40px;
+}
+
+.info_utente h2{
+    margin-top: 20px;
 }
 
 .error {
@@ -303,6 +501,26 @@ body {
     border: none;
 }
 
+.ricerca {
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-right: auto;
+    width: 550px;
+    height: auto;
+    font-size: 20px;
+}
+
+.ricerca form{
+    margin-top: 20px;
+}
+
+.ricerca input{
+    border-radius: 6px;
+    border: 1px solid grey;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 20px;
+}
+
 .matched {
     background-color: green;
 }
@@ -311,17 +529,174 @@ body {
 background-color: red;
 }
 
-.tabella_calendario {
-    border: solid black
-}
-.tabella_calendario td {
-    padding: 8px;
-    border: solid black
+.tabella_calendario{
+    /* background-color: rgba(255, 255, 255, 0.9); */
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 40px;
+} 
+
+.calendario {
+    border-style: solid;
+    border-color: black;
+    font-size: 13px;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.tabella_calendario a {
+.calendario td {
+    padding: 10px 10px 10px 10px;
+    border-color: black;
+    border-style: solid;
+}
+
+.calendario a {
     text-decoration: none;
     color: black
 }
 
+.rosso {
+    color: red;
+}
 
+.verde {
+    color:green;
+}
+
+.area_admin {
+    width: auto;
+    height: auto;
+    min-height: 750px;
+    background-image: url("Immagini/d.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: rgb(0, 0, 0);
+}
+
+.admin {
+    height: auto;
+    text-align: right;
+    padding: 20px 50px 20px 50px;
+    font-size: 20px;
+    background-color: whitesmoke;
+    margin-bottom: 40px;
+}
+
+#home_admin {
+    text-align: center;
+}
+
+.tabella_utenti_admin {
+    display: flex;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.utenti_admin {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-style: solid;
+    border-color: black;
+}
+
+.utenti_admin td {
+    padding: 10px 10px 10px 10px;
+    border-color: black;
+    border-style: solid;
+}
+
+.utenti_admin a {
+    text-decoration: none;
+    color: black
+}
+
+.tabella_prenotazioni_admin{
+    /* background-color: rgba(255, 255, 255, 0.9); */
+    display: flex;
+    padding-top: 20px;
+}
+
+.prenotazioni_admin {
+    border-style: solid;
+    border-color: black;
+    font-size: 13px;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.prenotazioni_admin td {
+    padding: 10px 10px 10px 10px;
+    border-color: black;
+    border-style: solid;
+}
+
+.prenotazioni_admin a {
+    text-decoration: none;
+    color: black
+}
+
+.ricerca_admin {
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-right: auto;
+    width: 550px;
+    height: auto;
+    font-size: 20px;
+}
+
+.ricerca_admin form{
+    margin-top: 20px;
+}
+
+.ricerca_admin input{
+    border-radius: 6px;
+    border: 1px solid grey;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+.creazione_skipass_admin {
+    width: 550px;
+    height: auto;
+    font-size: 20px;
+    margin: 30px 300px;
+    line-height: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.creazione_skipass_admin input {
+    border-radius: 6px;
+    border: 1px solid grey;
+    width: 100%;
+    height: 30px;
+}
+
+.creazione_skipass_admin #item_radio {
+    padding: 10px 20px 10px 20px;
+    display: flex;
+}
+
+
+#centro {
+    text-align: center;
+}
+
+#rinnovo {
+    width: 200px;
+    border-radius: 6px;
+    border: 1px solid grey;
+    height: 30px;
+}
+
+.form_rinnovo {
+    margin-left: 100px;
+    margin-top: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 20px;
+    width: 500px;
+}
+
+.rinnovo {
+    display: flex;
+}

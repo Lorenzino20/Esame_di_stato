@@ -43,7 +43,6 @@
         $righe = mysql_num_rows($query);
         if($righe <> 0) {
             $testo = "delete FROM prenota where id_risalita='$id_r' AND orario='$id_o' AND id_tessera='$id_n'";
-            echo "$testo";
             $query = mysql_query($testo);
             $testo = "SELECT S.risalite_rimanenti AS risalite
             FROM skipass S
@@ -51,7 +50,6 @@
             $query = mysql_query($testo);
             $righe = mysql_fetch_array($query);
             $risalite = $righe['risalite'] + 1;
-            echo "$risalite";
         
             $testo = "UPDATE skipass SET risalite_rimanenti = '$risalite' WHERE id_tessera = '$id_n'";
             $query = mysql_query($testo);

@@ -54,13 +54,14 @@
         //si effettua la query
         $query = mysql_query($testo);
         if($query) {    //se è tutto corretto si stampa la stringa che collega al file di log
-            echo "<h1>Registrazione effettuata procedi con il log <a href='login.html'>qui</a></h1>";
+            echo "<div class='comment'><h1>Registrazione effettuata procedi con il log <a href='login.html'>qui</a></h1></div>";
             session_destroy();
         }
         else {  //se c'è un errore si stampa la stringa che collega al file di registrazione 
-            echo "<h1>Errore nella registrazione riprova <a href='registrazione.php'>qui</a></h1>"; 
+            echo "<div class='comment'><h1>Errore nella registrazione riprova <a href='registrazione.php'>qui</a></h1></div>"; 
             session_destroy();
         }
+        
         mysql_close();
     }
 ?>

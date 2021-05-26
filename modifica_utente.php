@@ -20,6 +20,7 @@
             </ul>
         </div>
     </div>
+    <div class="area_cliente">
 <?php 
     session_start();
     if(!isset($_SESSION['email'])) {
@@ -44,6 +45,7 @@
         $codice_fiscale = $righe['codice_fiscale'];
         $_SESSION['codice_fisclae'] = $codice_fiscale;
         echo "<div class='modifica_dati'>
+        <div class='modifica_dati_form'>
         <form method='POST' action='sessione_modifica.php'>
         <h2>Nome:</h2>
         <input name='nome' value='$nome'>
@@ -56,6 +58,7 @@
         <br/>
         <input type='submit' name='modifica' value='Modifica'>
         </form>
+        </div>
         </div>";
         $testo = "SELECT * FROM skipass S WHERE S.id_utente = (SELECT U.id_utente FROM utente U WHERE U.codice_fiscale = '$codice_fiscale')";
         $query = mysql_query($testo);
@@ -73,17 +76,16 @@
             <h2>Data scadenza: $data_scadenza</h2>
             </div>";
             if($risalite_rimanenti == 0 || $data_scadenza < date("Y-m.d")) {
-                echo "<h2>Per rinnovare lo skipass clicca <a href='rinnovamentoSkipass.php'>qui</a></h2>";
+                echo "<div class='comment'><h2>Per rinnovare lo skipass clicca <a href='rinnovamentoSkipass.php'>qui</a></h2></div>";
             }
         } else {
-            echo "<h2>Impossibile visualizzare i dati dello skipass. Per farlo devi acquistarne uno <a href='acquistoSkipass.php'>qui</a></h2>";
+            echo "<div class='comment'><h2>Impossibile visualizzare i dati dello skipass. Per farlo devi acquistarne uno <a href='acquistoSkipass.php'>qui</a></h2></div>";
         }
-        
-        
         mysql_close();
     }
     
 ?>
+</div>
 <div class="footer">
         <span>Sito realizzato da Lorenzo D'Amico</span>
         <span>Copyright©2020 LDA SpA</span>

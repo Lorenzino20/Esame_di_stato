@@ -46,7 +46,7 @@
             $righe = mysql_num_rows($query);
     
             if($righe == 0) {
-                echo "<h1>Non ci sono prenotazioni associate a questo skipass. Se vuoi prenotare una risalita clicca <a href='prenotazione.php'>qui</a></h1>";
+                echo "<div class='comment'><h1>Non ci sono prenotazioni associate a questo skipass. Se vuoi prenotare una risalita clicca <a href='prenotazione.php'>qui</a></h1></div>";
             } else {
                 echo "<div class='tabella_prenotazioni'>
                 <table class='prenotazioni'><tr><td>Visualizzazione prenotazioni</td></tr>";
@@ -62,13 +62,13 @@
                     <td>$righe[data]</td>
                     <td><a onclick=\"return confirm('Cancellare questo record?')\" href=\"cancella.php?id_risalita=".$risalita."&orario=".$orario."&id_tessera=".$id_tessera."&pass=".$pass."\">Cancella</a></td>
                     <td><a href=\"qrcode.php?id_risalita=".$risalita."&orario=".$orario."&id_tessera=".$id_tessera."\">Visualizza qrcode</a></td>
+                    <td><a href='stampa_prenotazioni.php'>Stampa</a></td>
                     </tr>";
                 }
                 echo "</table></div>";
-                echo "<h2>Per stampare i qrcode di alcune o tutte le prenotazioni clicca <a href='stampa_prenotazioni.php'>qui</a></h2>";
             }
         } else {
-            echo "<h2>Impossibile effettuare prenotazioni senza aver acquistato uno skipass. Per acquistarlo clicca <a href='acquistoSkipass.php'>qui</a></h2>";
+            echo "<div class='comment'><h2>Impossibile effettuare prenotazioni senza aver acquistato uno skipass. Per acquistarlo clicca <a href='acquistoSkipass.php'>qui</a></h2></div>";
         }
         mysql_close();
     }

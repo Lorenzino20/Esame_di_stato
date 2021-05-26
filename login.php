@@ -22,7 +22,8 @@
 <?php
     session_start();
     //se non sono impostate la mail e la password non si può procedere
-    if(!isset($_POST['email']) || !isset($_POST['psw'])) {
+    if(!isset
+    ($_POST['email']) || !isset($_POST['psw'])) {
         echo "Impossibile accedere senza compilare il <a href='login.html'>Form di log</a>";
         exit();
     } else {

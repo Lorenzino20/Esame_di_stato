@@ -47,7 +47,8 @@
         } else {
             echo "<h2>Modifica non effettuata.
             Per accedere all'Area clienti clicca <a href='utente.php'>qui</a></h2>";
-        }
+        } 
+        mysql_close();
     }
 ?>
 </div>
